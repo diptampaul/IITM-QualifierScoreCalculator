@@ -1,124 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COVID Data Fetch</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            text-emphasis: none;
-        }
-        
-        body{
-            text-align: center;
-            transition: all 1.5s ease;
-        }
-        
-        .container{
-            height: 100vh;
-        
-        }
-        
-        .box{
-            margin: auto;
-            width: 800px;
-            height: 80vh;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            border: 0.3px solid rgb(82, 82, 82);
-            box-shadow: 3px 3px 5px 6px #ccc;
-            background-color: #eee;
-        }
-        
-        
-        button,
-        .talk,
-        .group,
-        .group-close,
-        .submit{
-            height: 40px;
-            padding: 0 20px;
-            border-radius: 5px;
-            border: none;
-            box-shadow: 3px 3px 5px 6px #ccc;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        
-        .heading{
-            margin: 15px auto;
-            color: rgb(66, 66, 66);
-        }
-        
-        .heading p{
-            margin: auto;
-            height: 20px;
-            width: 50%;
-            text-align: center;
-            border-bottom: 1px dashed rgb(46, 46, 46);
-        }
-        
-        .heading h2{
-            font-size: 54px;
-        }
-        
-        .talk,
-        .group,
-        .group-close{
-            width: 150px;
-            margin: 25px 0;
-            font-size: 18px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .group,
-        .group-close{
-            margin-left: 40px;
-        }
-        
-        button.active{
-            font-weight: 600;
-            cursor: no-drop;
-            pointer-events: none;
-        }
-        
-        
-        
-        .gp-contents{
-            margin: 20px 0;
-            font-size: 20px;
-        }
-        
-        .box-2{
-            display: none;
-        }
-
-        .submit{
-            width: 100px;
-            margin: 20px 0;
-            font-size: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .details {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-          }
-          th{
-              width: 130px;
-          }
-
-    </style>
+    <title>Qualifier Result Prediction</title>
+    <link rel="shortcut icon" href="{% static 'Logo.png' %}" type="image/png"> 
+    <link rel="icon" type="image/png" href="{% static 'Logo.png' %}"> 
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -132,7 +21,7 @@
                 IP
             </button>
             <button class="group">
-                Libraries
+                Credits
             </button><br><br><br>
             <div class="form">
                 <form action="upload" method="post" enctype="multipart/form-data">
@@ -221,27 +110,18 @@
             </button>
 
             
-            <h3 class="gp-contents"><strong>Django -</strong> 3.1.3</h3>
-            <h3 class="gp-contents"><strong>requests -</strong> 2.25.0</h3>
-            <h3 class="gp-contents"><strong>pandas -</strong> 1.1.4</h3>
-            <h3 class="gp-contents"><strong>tabula -</strong> 2.2.0</h3>
+            <h3 class="gp-contents"><strong>Diptam Paul</strong></h3>
+            Connect with Diptam @
+            <a href="https://www.linkedin.com/in/diptam-paul/">https://www.linkedin.com/in/diptam-paul/</a>
+            <h3 class="gp-contents"><strong>Special Thanks</strong> to</h3>
+            <h3 class="gp-contents"><strong>Mohit Singh</strong></h3>
+            <a href="https://colab.research.google.com/drive/1fFbtFTm2Tx5T1Pf_p2_LfU6JPG6grL4A?usp=sharing#scrollTo=c3sRPwM-TZGm">Mohit's Code <p style="font-size:0.8em; display: inline-block">(click here)</p></a> <br><br>
+            Connect with Mohit @
+            <a href="www.linkedin.com/in/mohitsinsniwal">www.linkedin.com/in/mohitsinsniwal</a>
         </div>
 
 
 
-    </div>
-    <div class="credit">
-        
-        <pre>
-            <h3>@Diptam Paul</h3>
-            <h3>Special Thanks</h3>
-<strong>Kudos to Mohit Singh</strong>
-<a href="https://colab.research.google.com/drive/1fFbtFTm2Tx5T1Pf_p2_LfU6JPG6grL4A?usp=sharing#scrollTo=c3sRPwM-TZGm">Mohit's Code</a>
-Connect with Mohit @
-<a href="www.linkedin.com/in/mohitsinsniwal">www.linkedin.com/in/mohitsinsniwal</a>
-<a href="https://www.instagram.com/mohit_sinsniwal/">https://www.instagram.com/mohit_sinsniwal/</a>
-            
-        </pre>
     </div>
 
 

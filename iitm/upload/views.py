@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from .models import FileUpload
 from requests import get
 import tabula
@@ -94,6 +95,7 @@ def calculate(file_path):
 def home(request):
     return render(request, 'index.htm', {'something': False,'ip': public_ip})
 
+@csrf_exempt
 def upload(request):
     if request.method == 'POST':
         file_upload = request.FILES['file']

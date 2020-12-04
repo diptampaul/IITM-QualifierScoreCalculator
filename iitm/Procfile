@@ -1,0 +1,1 @@
+web: gunicorn iitm.wsgi --log-file -

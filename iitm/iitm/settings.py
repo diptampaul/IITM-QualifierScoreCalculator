@@ -25,9 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'b9(m(hxt=019n*k+#q1+$ap29-+ce9%fh&bznhpvd7e88tg*$j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'diptampaul-iitm-qualifier.herokuapp.com']
+#ALLOWED_HOSTS = ['diptampaul-iitmqualifier.herokuapp.com','localhost', '127.0.0.1', ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'iitm.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -85,6 +86,21 @@ DATABASES = {
         'PASSWORD': '1234',
         'HOST': 'localhost'
     }
+}'''
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+    }
+}'''
+
+import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=600)
+#DATABASES['default'].update(db_from_env)
+
+DATABASES = {
+    'default': dj_database_url.config()
 }
 
 
