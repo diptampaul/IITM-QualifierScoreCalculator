@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'b9(m(hxt=019n*k+#q1+$ap29-+ce9%fh&bznhpvd7e88tg*$j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'diptampaul-iitm-qualifier.herokuapp.com']
 
 
 # Application definition
@@ -132,3 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 #Media upload to pic directory
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
