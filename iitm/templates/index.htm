@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID Data Fetch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            text-emphasis: none;
+        }
+        
+        body{
+            text-align: center;
+            transition: all 1.5s ease;
+        }
+        
+        .container{
+            height: 100vh;
+        
+        }
+        
+        .box{
+            margin: auto;
+            width: 800px;
+            height: 80vh;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0.3px solid rgb(82, 82, 82);
+            box-shadow: 3px 3px 5px 6px #ccc;
+            background-color: #eee;
+        }
+        
+        
+        button,
+        .talk,
+        .group,
+        .group-close,
+        .submit{
+            height: 40px;
+            padding: 0 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 3px 3px 5px 6px #ccc;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .heading{
+            margin: 15px auto;
+            color: rgb(66, 66, 66);
+        }
+        
+        .heading p{
+            margin: auto;
+            height: 20px;
+            width: 50%;
+            text-align: center;
+            border-bottom: 1px dashed rgb(46, 46, 46);
+        }
+        
+        .heading h2{
+            font-size: 54px;
+        }
+        
+        .talk,
+        .group,
+        .group-close{
+            width: 150px;
+            margin: 25px 0;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .group,
+        .group-close{
+            margin-left: 40px;
+        }
+        
+        button.active{
+            font-weight: 600;
+            cursor: no-drop;
+            pointer-events: none;
+        }
+        
+        
+        
+        .gp-contents{
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        
+        .box-2{
+            display: none;
+        }
+
+        .submit{
+            width: 100px;
+            margin: 20px 0;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .details {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+          }
+          th{
+              width: 130px;
+          }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box box-1">
+            <div class="heading">
+                <h2>Qualifier Marks Calculator</h2>
+                <p></p>
+            </div>
+            <button class="talk">
+                IP
+            </button>
+            <button class="group">
+                Libraries
+            </button><br><br><br>
+            <div class="form">
+                <form action="upload" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <input type="file" name="file" id="file" style="margin-left: 50px" required>
+                    <br><br>
+                    <input type="submit" name="submit" class='submit'>
+                </form>
+            </div>
+
+            {% if something %}
+            <hr>
+            <h2>Hi, {{name}} !! Your Paper Code: {{code}}</h2>
+
+        <br><br>
+        <table class="details">
+            <tr>
+              <th> Marks Obtained </th>
+              <th> Total Marks </th>
+              <th> Pass Marks </th>
+              <th> Obtained Per. </th>
+              <th> Passing Per. </th>
+            </tr>
+            <tr>
+              <td>{{count}}</td>
+              <td>200</td>
+              <td>100 (GEN)</td>
+              <td>{{total_percentage}}</td>
+              <td>50%</td>
+            </tr>
+          </table>
+          <br><h2><span style="border-bottom: 1px solid black"> Subject-wise Marks </span></h2><br>
+          <table class="details">
+            <tr>
+              <th>  </th>
+              <th> English </th>
+              <th> CT </th>
+              <th> Statistics </th>
+              <th> Maths </th>
+            </tr>
+            <tr>
+              <td>Obtained</td>
+              <td>{{engcount}}</td>
+              <td>{{ctcount}}</td>
+              <td>{{statcount}}</td>
+              <td>{{mathcount}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Percentage</td>
+                <td>{{engper}}</td>
+                <td>{{ctper}}</td>
+                <td>{{statper}}</td>
+                <td>{{mathper}}</td>
+              </tr>
+              <tr>
+                <td>Passing Per.</td>
+                <td>40%</td>
+                <td>40%</td>
+                <td>40%</td>
+                <td>40%</td>
+              </tr>
+          </table>
+
+          {% endif %}
+
+        </div>
+
+        <div class="box box-2">
+            <div class="heading">
+                <h2>Qualifier Marks Calculator</h2>
+                <p></p>
+            </div>
+            <button class="talk">
+                IP
+            </button>
+            <button class="group-close" style="margin-bottom: 100px;">
+                Close
+            </button>
+
+            
+            <h3 class="gp-contents"><strong>Django -</strong> 3.1.3</h3>
+            <h3 class="gp-contents"><strong>requests -</strong> 2.25.0</h3>
+            <h3 class="gp-contents"><strong>pandas -</strong> 1.1.4</h3>
+            <h3 class="gp-contents"><strong>tabula -</strong> 2.2.0</h3>
+        </div>
+
+
+
+    </div>
+    <div class="credit">
+        
+        <pre>
+            <h3>@Diptam Paul</h3>
+            <h3>Special Thanks</h3>
+<strong>Kudos to Mohit Singh</strong>
+<a href="https://colab.research.google.com/drive/1fFbtFTm2Tx5T1Pf_p2_LfU6JPG6grL4A?usp=sharing#scrollTo=c3sRPwM-TZGm">Mohit's Code</a>
+Connect with Mohit @
+<a href="www.linkedin.com/in/mohitsinsniwal">www.linkedin.com/in/mohitsinsniwal</a>
+<a href="https://www.instagram.com/mohit_sinsniwal/">https://www.instagram.com/mohit_sinsniwal/</a>
+            
+        </pre>
+    </div>
+
+
+
+
+    <script>
+        //answers
+//const greetings = ['Hello Mate', 'How are you doing today?', "What's Up homeboi"]
+
+
+//dom
+const btn = document.querySelector('.talk');
+const group = document.querySelector('.group')
+const group_cls = document.querySelector('.group-close')
+const main_content = document.querySelector('.box-1')
+const group_content = document.querySelector('.box-2')
+const submit_btn = document.querySelector('.submit')
+
+
+
+//btn hover effect
+btn.addEventListener('mouseenter', function(e){
+    e.target.textContent = '{{ip}}'
+    e.target.style.width = '200px'
+    e.target.style.boxShadow = '5px 5px 5px 6px #ccc'
+})
+btn.addEventListener('mouseleave', function(e){
+    e.target.textContent = 'IP'
+    e.target.style.width = '150px'
+    e.target.style.boxShadow = '3px 3px 5px 6px #ccc'
+})
+
+group.addEventListener('click',function(e){
+    main_content.style.display = 'None';
+    group_content.style.display = 'block';
+})
+
+group_cls.addEventListener('click',function(e){
+    main_content.style.display = 'block';
+    group_content.style.display = 'none';
+})
+    </script>
+</body>
+</html>
