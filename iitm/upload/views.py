@@ -12,7 +12,7 @@ def calculate(file_path):
     d=k[0][4:]
     name=d.columns[1]
 
-    print(f"Name:{name}\nPaper Code:{code}")
+    #print(f"Name:{name}\nPaper Code:{code}")
 
     array=[]    
 
@@ -88,7 +88,7 @@ def calculate(file_path):
           count += int(2)
           mathcount+=2
     total_percentage = float(count)/2
-    print(f"Total Marks:{count}\nTotal Percentage:{float(count)/2}\n\nSubject Wise Marks\nEnglish:{engcount}\nCT:{ctcount}\nStat:{statcount}\nMaths:{mathcount}\n\nSubject Wise Percentage\nEnglish:{engcount*2}\nCT:{ctcount*2}\nStat:{statcount*2}\nMaths:{mathcount*2}")
+    #print(f"Total Marks:{count}\nTotal Percentage:{float(count)/2}\n\nSubject Wise Marks\nEnglish:{engcount}\nCT:{ctcount}\nStat:{statcount}\nMaths:{mathcount}\n\nSubject Wise Percentage\nEnglish:{engcount*2}\nCT:{ctcount*2}\nStat:{statcount*2}\nMaths:{mathcount*2}")
     return name, code,'{:.2f}'.format(count),'{:.2f}'.format(total_percentage), '{:.2f}'.format(engcount),'{:.2f}'.format(ctcount),'{:.2f}'.format(statcount),'{:.2f}'.format(mathcount),'{:.2f}'.format(engcount*2),'{:.2f}'.format(ctcount*2),'{:.2f}'.format(statcount*2),'{:.2f}'.format(mathcount*2)
 
 # Create your views here.
