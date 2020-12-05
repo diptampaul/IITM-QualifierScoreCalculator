@@ -9,9 +9,28 @@
     <link rel="icon" type="image/png" href="{% static 'Logo.png' %}"> 
     <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .mobile{
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+        }
+
+        @media screen and (max-width: 800px) {
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container desktop">
         <div class="box box-1">
             <div class="heading">
                 <h2>Qualifier Marks Calculator</h2>
@@ -115,13 +134,22 @@
             <a href="https://www.linkedin.com/in/diptam-paul/">https://www.linkedin.com/in/diptam-paul/</a>
             <h3 class="gp-contents"><strong>Special Thanks</strong> to</h3>
             <h3 class="gp-contents"><strong>Mohit Singh</strong></h3>
-            <a href="https://colab.research.google.com/drive/1fFbtFTm2Tx5T1Pf_p2_LfU6JPG6grL4A?usp=sharing#scrollTo=c3sRPwM-TZGm">Mohit's Code <p style="font-size:0.8em; display: inline-block">(click here)</p></a> <br><br>
+            <a href="https://colab.research.google.com/drive/1PDevzeXhyXhcppIXVcYur1W2GByRhneb?usp=sharing">Mohit's Code <p style="font-size:0.8em; display: inline-block">(click here)</p></a> <br><br>
             Connect with Mohit @
-            <a href="www.linkedin.com/in/mohitsinsniwal">www.linkedin.com/in/mohitsinsniwal</a>
+            <a href="www.linkedin.com/in/mohitsinsniwal">www.linkedin.com/in/mohitsinsniwal</a><br>
+            <h3 class="gp-contents"><strong>Abhishek Kumar</strong></h3>
+            Connect with Abhishek @
+            <a href="https://www.linkedin.com/in/abhishek-kumar-b5184520/">https://www.linkedin.com/in/abhishek-kumar-b5184520/</a>
         </div>
 
 
 
+    </div>
+
+    <div class="container mobile">
+        <br><br><br><br>
+        <h1>Please Open it in Desktop Mode</h1>
+        <h2>This Webpage is not Responsive</h2>
     </div>
 
 

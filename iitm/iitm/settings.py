@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b9(m(hxt=019n*k+#q1+$ap29-+ce9%fh&bznhpvd7e88tg*$j'
+SECRET_KEY = 'hidden'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['diptampaul-iitmqualifier.herokuapp.com','localhost', '127.0.0.1', ]
 ALLOWED_HOSTS = ['*']
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'iitm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'IITQualifier',
+        'NAME': '********',
         'USER': 'postgres',
-        'PASSWORD': '1234',
+        'PASSWORD': '****',
         'HOST': 'localhost'
     }
 }'''
